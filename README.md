@@ -22,21 +22,33 @@ To run this project locally, perform the following steps.
 * Next try running the app as a Spring Boot app.  You can do this by running the Main.java file in this project as a standard java project or you can run spring boot at your project's root with Maven using the following command.  'mvn spring-boot:run'
 
 Spring Data REST - 1.2.1.RELEASE
+-------------
 Spring Boot
 Spring MVC
 Spring Data JPA
 
-main class
+Main class
+-------------
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
 
-repository
+Repository
+-------------
 @Repository
 @PersistenceContext
 private EntityManager entityManager;
 
 Test
+-------------
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Main.class)
 @WebAppConfiguration
+
+Default H2 database
+-------------
+Driver Class	org.h2.Driver
+JDBC URL	jdbc:h2:mem:testdb
+User Name	sa
+Password	 <blank>
+https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
