@@ -20,3 +20,23 @@ To run this project locally, perform the following steps.
 * Import the project into your IDE using the maven pom.xml.  In spring STS suite this is done by importing an existing maven project
 * Run the JUnit tests in the src/test/java folder.  If all the tests pass, pat yourself on the back.
 * Next try running the app as a Spring Boot app.  You can do this by running the Main.java file in this project as a standard java project or you can run spring boot at your project's root with Maven using the following command.  'mvn spring-boot:run'
+
+Spring Data REST - 1.2.1.RELEASE
+Spring Boot
+Spring MVC
+Spring Data JPA
+
+main class
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+
+repository
+@Repository
+@PersistenceContext
+private EntityManager entityManager;
+
+Test
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Main.class)
+@WebAppConfiguration
