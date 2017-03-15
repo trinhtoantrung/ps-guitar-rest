@@ -38,6 +38,7 @@ Repository
 @Repository
 @PersistenceContext
 private EntityManager entityManager;
+@RepositoryRestResource(path="companies") -> http://localhost:8080/api/companies
 
 Test
 -------------
@@ -52,3 +53,10 @@ JDBC URL	jdbc:h2:mem:testdb
 User Name	sa
 Password	 <blank>
 https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
+
+Customimzig REST payloads
+-------------
+Spring Data REST projections
+@Projection(name="modelDetail", types={Model.class})
+public interface ModelDetail {
+}
