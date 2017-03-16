@@ -26,6 +26,7 @@ Spring Data REST - 1.2.1.RELEASE
 Spring Boot
 Spring MVC
 Spring Data JPA
+Use the Jackson JSON parser to convert java entity into JSON and vice versa
 
 Main class
 -------------
@@ -56,7 +57,30 @@ https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-s
 
 Customimzig REST payloads
 -------------
-Spring Data REST projections
+Spring Data REST projections -> just for read data (GET)
 @Projection(name="modelDetail", types={Model.class})
 public interface ModelDetail {
 }
+
+Virtual projection
+Projection excerpts
+just apply for collection
+
+Jackson Payloads
+-------------
+@JsonIgnore
+
+Security REST API (
+-------------
+http://docs.spring.io/spring-boot/docs/1.2.1.RELEASE/reference/htmlsingle/#howto-switch-off-spring-boot-security-configuration
+spring-boot-starter-security
+Authentication + Authorization
+Authen:
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnable = true)
+SecurityConfiguration.java extends WebSecurityConfigurationAdapter
+@Autowired
+configGlobal...
+
+prePostEnable = true -> enable @PreAuthorize(hasRole="ROLE_ADMIN") = @Secured

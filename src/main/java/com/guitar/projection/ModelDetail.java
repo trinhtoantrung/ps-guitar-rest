@@ -1,11 +1,8 @@
 package com.guitar.projection;
 
-import com.guitar.model.Manufacturer;
 import com.guitar.model.Model;
-import com.guitar.model.ModelType;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.rest.core.config.Projection;
-
-import java.math.BigDecimal;
 
 /**
  * Creation of ps-guitar-rest.
@@ -19,10 +16,6 @@ import java.math.BigDecimal;
 
 @Projection(name = "modelDetail", types = {Model.class})
 public interface ModelDetail {
-  String getName();
-  BigDecimal getPrice();
-  Manufacturer getManufacturer();
-  ModelType getModelType();
-  int getFrets();
-  String getWoodType();
+  @Value("#{target.name}")
+  String getModelName();
 }
