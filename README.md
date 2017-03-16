@@ -84,3 +84,24 @@ SecurityConfiguration.java extends WebSecurityConfigurationAdapter
 configGlobal...
 
 prePostEnable = true -> enable @PreAuthorize(hasRole="ROLE_ADMIN") = @Secured
+
+Spring Data REST validations
+-------------
+1. JPA Constrants: @NotNull, @Min..
+
+2. Validator Event: beforeCreateEvent, afterCreateEvent..
+@Component -> wire to spring content
+@RepositoryEventHandle(Manufacturer.class)
+ManufacturerEventHandler.class
+
+3. Controll Exception with status + message 
+@ControllerAdive
+ControllerConfiguration.class
+@ExceptionHandler(ConstrainViolationException.class)
+@ResponseState(value=HttpStatus.BAD_REQUEST, message="..")
+public void notValid()
+	
+Hypermedia
+-------------
+http://localhost:8080/api/models/schema
+(Accept: application/schema+json)
